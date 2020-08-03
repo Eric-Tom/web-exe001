@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <style>
+        body {
+    background-image: url("images/login/loginBac.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    }
+    .login_all {
+        width: 400px;
+        height: 260px;
+        padding: 13px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(240, 255, 255, 0.5);
+        border-radius: 10px;
+        text-align: center;
+    }
+    h1{
+        font-family:SimSun;
+        font-size:50px;
+        margin-left: 40px;
+        margin-top: 50px;
+        text-align: center;
+        /* color: rgb(223,1,0); */
+        color:#E8FFE8;   
+    }
+    form p > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .image_logo {
+        margin-top: 22px;
+    }
+    .label {
+        font-size: 14px;
+        font-family: 宋体;
+        width: 65px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        color: white;
+        background-color: #3CD8FF;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .input {
+        width: 278px;
+        height: 28px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 0;
+    }
+    .b-login {
+        font-size: 14px;
+        font-family: 宋体;
+        width: 120px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        color: white;
+        background-color: #3BD9FF;
+        border-radius: 6px;
+        border: 0;
+        float: left;
+    }
+    .b-forget {
+        font-size: 12px;
+        color: white;
+        text-decoration: none;
+        position: relative;
+        float: right;
+        top: 5px;
+    }
+    .b-forget:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+    .login_control {
+        padding: 0 28px;
+    }
+    </style>
+    <script type="text/javascript">
+        function login() {
+            var account = document.loginForm.account.value;
+            var password = document.loginForm.password.value;
+            if (account == "") {
+                alert("请输入用户名");
+                document.loginForm.account.focus( );
+                return;
+            } else if (password  == "") {
+                alert("请输入密码");
+                document.loginForm.password.focus( );
+                return;
+            } else if(account == "admin" && password == "123456"){
+                window.location.href="welcome.html"
+            } else {
+                alert("请输入正确的用户名和密码！")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>网易云登录页面</h1>
+<div class="login_all">
+    <p class="image_logo"><img src="images/login/fly01.png" width="60" height="60"></p>
+    <form name="loginForm" method="post">
+        <p><label class="label">用户名</label><input name="account" type="text" class="input"/></p>
+        <p><label class="label">密码</label><input name="password" type="password" class="input"/></p>
+        <div class="login_control">
+            <input type="button" class="b-login" value="登录" onclick="login()">
+            <a class="b-forget" href="forget_pwd.html">忘记密码？</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
